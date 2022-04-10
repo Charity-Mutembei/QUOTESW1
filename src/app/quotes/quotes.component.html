@@ -1,9 +1,12 @@
-<!-- <div>
+<div>
     <ul *ngFor="let quote of quotes">
-        <li>{{quote.quote}}</li>
+        <li>{{quote.name}}</li>
         <span>{{quote.upvote}}</span> ,<span>{{quote.downvote}}</span>
 
     </ul>
-</div> -->
+</div>
+<div>
+    <app-form (addQuotes)="addNewQuotes($event)"></app-form> 
+</div>
 
 

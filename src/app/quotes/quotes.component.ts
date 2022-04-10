@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+// import { globalAgent } from 'http';
 import { Quotes } from '../quotes'
+
 @Component({
   selector: 'app-quotes',
   templateUrl: './quotes.component.html',
@@ -7,16 +9,22 @@ import { Quotes } from '../quotes'
 })
 export class QuotesComponent implements OnInit {
   quotes: Quotes [] = [
-    // (name:string, id:number, quote:string, upvote:number, downvote:number)
-    // new Quotes('quotes authors name', 1, 'quote', 0, 0, ),
-    // new Quotes('quotes authors name', 2, 'quote', 0, 0, ),
-    // new Quotes('quotes authors name', 3, 'quote', 0, 0, ),
-    // new Quotes('quotes authors name', 4, 'quote', 0, 0, ),
-    // new Quotes('quotes authors name', 5, 'quote', 0, 0, ),
-    // new Quotes('quotes authors name', 6, 'quote', 0, 0, ),
-    // new Quotes('quotes authors name', 7, 'quote', 0, 0, )
-    
-  ]
+    // (quote:string, id:number, name:string, upvote:number, downvote:number)
+    new Quotes('quote', 1, 'quotes authors name', 0, 0),
+    new Quotes('quote', 1, 'quotes authors name', 0, 0),
+    new Quotes('quote', 1, 'quotes authors name', 0, 0),
+    new Quotes('quote', 1, 'quotes authors name', 0, 0),
+    new Quotes('quote', 1, 'quotes authors name', 0, 0),
+    new Quotes('quote', 1, 'quotes authors name', 0, 0),
+    new Quotes('quote', 1, 'quotes authors name', 0, 0),
+  ];
+
+  addNewQuotes(quote:any){
+    let goalLength = this.quotes.length;
+    quote.id = goalLength+1;
+    // goalLength.completeDate = new Date(quote.completeDate)
+    this.quotes.push(quote)
+  }
 
   constructor() { }
 
