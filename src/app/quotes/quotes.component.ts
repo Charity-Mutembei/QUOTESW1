@@ -10,13 +10,13 @@ import { Quotes } from '../quotes'
 export class QuotesComponent implements OnInit {
   quotes: Quotes [] = [
     // (quote:string, id:number, name:string, upvote:number, downvote:number)
-    new Quotes('quote', 1, 'quotes authors name', 0, 0),
-    new Quotes('quote', 1, 'quotes authors name', 0, 0),
-    new Quotes('quote', 1, 'quotes authors name', 0, 0),
-    new Quotes('quote', 1, 'quotes authors name', 0, 0),
-    new Quotes('quote', 1, 'quotes authors name', 0, 0),
-    new Quotes('quote', 1, 'quotes authors name', 0, 0),
-    new Quotes('quote', 1, 'quotes authors name', 0, 0),
+    // new Quotes('quote', 1, 'quotes authors name', 0, 0),
+    // new Quotes('quote', 1, 'quotes authors name', 0, 0),
+    // new Quotes('quote', 1, 'quotes authors name', 0, 0),
+    // new Quotes('quote', 1, 'quotes authors name', 0, 0),
+    // new Quotes('quote', 1, 'quotes authors name', 0, 0),
+    // new Quotes('quote', 1, 'quotes authors name', 0, 0),
+    // new Quotes('quote', 1, 'quotes authors name', 0, 0),
   ];
 
   addNewQuotes(quote:any){
