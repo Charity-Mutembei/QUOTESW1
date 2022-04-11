@@ -10,9 +10,20 @@ import { Quotes } from '../quotes';
 export class QuoteCompleteComponent implements OnInit {
   @Input() quote!: Quotes;
   @Output() isComplete = new EventEmitter<boolean>();
+  quotes: Quotes [] = [];
 
-  goalComplete(complete:boolean){
+  goalDelete(complete:boolean){
     this.isComplete.emit(complete);
+  }
+
+  deleteQuote(isComplete:any, index:any){
+    if(isComplete){
+      let toDelete = confirm ('Are you sure you want to delete ${this.quotes[index].name}?')
+
+      if(toDelete){
+        this.quotes.splice(index,1)
+      }
+    }
   }
 
   constructor() { }
