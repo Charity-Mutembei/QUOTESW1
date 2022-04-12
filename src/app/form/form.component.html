@@ -1,7 +1,7 @@
 <form (ngSubmit)='submitQuotes ()' #quotesForm='ngForm'>
     <div>
 
-        <div class="input-group">
+        <div class="input-group" style="margin-top: 20px;">
             <span class="input-group-text">Quote</span>
             <label for="quote"></label>
             <input type="text" required class="form-control" id="name" [(ngModel)]="newQuote.name" name="name" #name='ngModel' required>
@@ -12,18 +12,18 @@
                 <p>Quote is required</p>
             </div>
           </div>
-        <div class="input-group">
+        <div class="input-group" style="margin-top: 20px;">
             <span class="input-group-text">Owner's Names</span>
             <input type="text" aria-label="First name" class="form-control">
             <input type="text" aria-label="Last name" class="form-control">
           </div>
-        <div class="input-group">
+        <div class="input-group" style="margin-top: 20px;">
             <span class="input-group-text">Your Names</span>
             <input type="text" aria-label="First name" class="form-control">
             <input type="text" aria-label="Last name" class="form-control">
           </div>
         <div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Submit</button>
         </div>
     </div>
 </form>
