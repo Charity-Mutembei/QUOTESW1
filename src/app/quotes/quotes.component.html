@@ -11,11 +11,11 @@
           <li>{{ quote.name }}</li>
           <i class="fa fa-thumbs-o-up" aria-hidden="true"></i
           ><span>{{ quote.upvote }}</span>
-          ,
+          <span style="margin-right: 5%;"></span>
           <i class="fa fa-thumbs-o-down" aria-hidden="true"></i
           ><span>{{ quote.downvote }}</span>
           <div class="col">
-            <button (click)='quoteDelete(true)'>Delete Quote</button>
+            <button (click)='quoteDelete(true)' class="btn btn-dark" style="margin-top: 2%;">Delete Quote</button>
             <app-quote-complete *ngIf= [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-complete>
         </div>
         <!-- <app-quote-complete *ngIf= [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-complete> -->
