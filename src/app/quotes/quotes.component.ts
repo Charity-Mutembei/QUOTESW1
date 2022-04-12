@@ -22,7 +22,7 @@ export class QuotesComponent implements OnInit {
   }
 
   upVote(quote:any){
-    quote.upVote = quote.Upvote + 1;
+    quote.upVote = quote.upVote + 1;
   }
 
   downVote(quote:any){
