@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  Input, Output, EventEmitter } from '@angular/core';
 // import { globalAgent } from 'http';
 import { Quotes } from '../quotes';
+import { QuoteCompleteComponent } from '../quote-complete/quote-complete.component';
 
 @Component({
   selector: 'app-quotes',
@@ -8,15 +9,9 @@ import { Quotes } from '../quotes';
   styleUrls: ['./quotes.component.css'],
 })
 export class QuotesComponent implements OnInit {
+  @Input() quote!: Quotes;
+  @Output() isComplete = new EventEmitter<boolean>();
   quotes: Quotes[] = [
-    // (quote:string, id:number, name:string, upvote:number, downvote:number)
-    // new Quotes('quote', 1, 'quotes authors name', 0, 0),
-    // new Quotes('quote', 1, 'quotes authors name', 0, 0),
-    // new Quotes('quote', 1, 'quotes authors name', 0, 0),
-    // new Quotes('quote', 1, 'quotes authors name', 0, 0),
-    // new Quotes('quote', 1, 'quotes authors name', 0, 0),
-    // new Quotes('quote', 1, 'quotes authors name', 0, 0),
-    // new Quotes('quote', 1, 'quotes authors name', 0, 0),
   ];
 
   addNewQuotes(quote: any) {
@@ -25,6 +20,10 @@ export class QuotesComponent implements OnInit {
     // goalLength.completeDate = new Date(quote.completeDate)
     this.quotes.push(quote);
   }
+  quoteDelete(complete:boolean){
+    this.isComplete.emit(complete);
+  }
+
 
   deleteQuote(isComplete:any, index:any){
     if(isComplete){
