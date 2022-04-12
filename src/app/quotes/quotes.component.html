@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="col">
-      <div>
+      <!-- <div>
         <ul *ngFor="let quote of quotes; let i = index">
           <li>{{ quote.name }}</li>
           <i class="fa fa-thumbs-o-up" aria-hidden="true"></i
@@ -17,10 +17,53 @@
           <div class="col">
             <button (click)='quoteDelete(true)' class="btn btn-dark" style="margin-top: 2%;">Delete Quote</button>
             <app-quote-complete *ngIf= [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-complete>
-        </div>
+        </div> -->
         <!-- <app-quote-complete *ngIf= [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-complete> -->
-        </ul>
+        <!-- </ul> -->
+        <div class="card" *ngFor="let quote of quotes; let i = index" style="margin-top: 5%;">
+          
+          <div class="card-header" style="background-color: black; ">
+            <h6 style="color: azure;">Quote</h6>
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <div class="start">
+                  <div class="col">
+                    {{ quote.name }}
+                  </div>
+                 
+                  <div class="col">
+                    <i (click)="upVote(quote)" class="fa fa-thumbs-o-up" aria-hidden="true"></i
+                      ><span>{{ quote.upvote }}</span>
+                      <span style="margin-right: 5%;"></span>
+                      <i (click)="downVote(quote)" class="fa fa-thumbs-o-down" aria-hidden="true"></i
+                      ><span>{{ quote.downvote }}</span>
+                  </div>                  
+                </div>
+                <!-- <app-quote-complete *ngIf= [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-complete> -->
+                <!-- </ul> --> 
+                <div class="row">
+                  <div class="col">
+                    <div class="footer">
+                      <footer class="blockquote-footer" style="margin-top: 5%;">{{ quote.author }}<cite title="Source Title"></cite></footer>
+      
+                    </div>
+                  </div>
+                  <div class="col">
+                    <button (click)='deleteQuote($event, i)' class="btn btn-dark" style="margin-top: 2%;">Delete Quote</button>
+                    <app-quote-complete *ngIf= [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-complete>
+                </div>
+                </div>
+              
+             
+               
+              
+            
+            </blockquote>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
-</div>
+<!-- </div> -->

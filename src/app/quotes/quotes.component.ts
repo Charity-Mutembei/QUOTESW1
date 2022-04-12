@@ -20,6 +20,14 @@ export class QuotesComponent implements OnInit {
     // goalLength.completeDate = new Date(quote.completeDate)
     this.quotes.push(quote);
   }
+
+  upVote(quote:any){
+    quote.upVote = quote.Upvote + 1;
+  }
+
+  downVote(quote:any){
+    quote.downVote = quote.downVote -1;
+  }
   quoteDelete(complete:boolean){
     this.isComplete.emit(complete);
   }
@@ -28,7 +36,7 @@ export class QuotesComponent implements OnInit {
   deleteQuote(isComplete:any, index:any){
     if(isComplete){
       // this.quotes.splice(index,1);
-      let toDelete = confirm('Are you sure you want to delete ${this.quotes[index].name}?')
+      let toDelete = confirm('Are you sure you want to delete?')
 
       if (toDelete){
         this.quotes.splice(index,1)
